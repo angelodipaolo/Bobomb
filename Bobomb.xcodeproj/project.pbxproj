@@ -7,21 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17533F5D1B3527610047BDCA /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17533F5C1B3527610047BDCA /* Payload.swift */; };
+		17547AE01C619F6D00D4B030 /* MeeSeeks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17547ADF1C619F6C00D4B030 /* MeeSeeks.framework */; };
+		17547AE31C619FB300D4B030 /* ELWebService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17547AE21C619FB300D4B030 /* ELWebService.framework */; };
 		179103961B196F8000FBE015 /* Bobomb.h in Headers */ = {isa = PBXBuildFile; fileRef = 179103951B196F8000FBE015 /* Bobomb.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1791039C1B196F8000FBE015 /* Bobomb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179103901B196F8000FBE015 /* Bobomb.framework */; };
 		179103A31B196F8000FBE015 /* BobombTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179103A21B196F8000FBE015 /* BobombTests.swift */; };
-		179103AF1B19707300FBE015 /* THGWebService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179103AE1B19707300FBE015 /* THGWebService.framework */; };
-		179406F31B1BC784006DD4A8 /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406E91B1BC784006DD4A8 /* GameResult.swift */; };
+		179406F31B1BC784006DD4A8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406E91B1BC784006DD4A8 /* Game.swift */; };
 		179406F41B1BC784006DD4A8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406EA1B1BC784006DD4A8 /* Image.swift */; };
-		179406F51B1BC784006DD4A8 /* ModelSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406EB1B1BC784006DD4A8 /* ModelSerializer.swift */; };
 		179406F61B1BC784006DD4A8 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406EC1B1BC784006DD4A8 /* Platform.swift */; };
 		179406F71B1BC784006DD4A8 /* ResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406ED1B1BC784006DD4A8 /* ResourceType.swift */; };
-		179406F81B1BC784006DD4A8 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406EE1B1BC784006DD4A8 /* Payload.swift */; };
 		179406F91B1BC784006DD4A8 /* GiantBombClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406F01B1BC784006DD4A8 /* GiantBombClient.swift */; };
-		179406FA1B1BC784006DD4A8 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406F11B1BC784006DD4A8 /* JSON.swift */; };
-		179406FD1B1BD393006DD4A8 /* NSError+JSONSerializationErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406FC1B1BD393006DD4A8 /* NSError+JSONSerializationErrorType.swift */; };
-		179406FF1B1BD6E2006DD4A8 /* ServiceTask+PayloadRespondable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406FE1B1BD6E2006DD4A8 /* ServiceTask+PayloadRespondable.swift */; };
-		179407011B1BE8C5006DD4A8 /* THGWebService.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 179103AE1B19707300FBE015 /* THGWebService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		179406FF1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406FE1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,37 +32,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		179407001B1BE8B8006DD4A8 /* Copy Frameworks */ = {
+		179407001B1BE8B8006DD4A8 /* Copy Frameworks (1 item) */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				179407011B1BE8C5006DD4A8 /* THGWebService.framework in Copy Frameworks */,
 			);
-			name = "Copy Frameworks";
+			name = "Copy Frameworks (1 item)";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17533F5C1B3527610047BDCA /* Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		17547ADF1C619F6C00D4B030 /* MeeSeeks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MeeSeeks.framework; path = Carthage/Build/iOS/MeeSeeks.framework; sourceTree = "<group>"; };
+		17547AE21C619FB300D4B030 /* ELWebService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ELWebService.framework; path = Carthage/Build/iOS/ELWebService.framework; sourceTree = "<group>"; };
 		179103901B196F8000FBE015 /* Bobomb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bobomb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		179103941B196F8000FBE015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		179103951B196F8000FBE015 /* Bobomb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bobomb.h; sourceTree = "<group>"; };
 		1791039B1B196F8000FBE015 /* BobombTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BobombTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		179103A11B196F8000FBE015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		179103A21B196F8000FBE015 /* BobombTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobombTests.swift; sourceTree = "<group>"; };
-		179103AE1B19707300FBE015 /* THGWebService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = THGWebService.framework; path = Carthage/Build/iOS/THGWebService.framework; sourceTree = "<group>"; };
-		179406E91B1BC784006DD4A8 /* GameResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
+		179406E91B1BC784006DD4A8 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		179406EA1B1BC784006DD4A8 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		179406EB1B1BC784006DD4A8 /* ModelSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelSerializer.swift; sourceTree = "<group>"; };
 		179406EC1B1BC784006DD4A8 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		179406ED1B1BC784006DD4A8 /* ResourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceType.swift; sourceTree = "<group>"; };
-		179406EE1B1BC784006DD4A8 /* Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		179406F01B1BC784006DD4A8 /* GiantBombClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiantBombClient.swift; sourceTree = "<group>"; };
-		179406F11B1BC784006DD4A8 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
-		179406FC1B1BD393006DD4A8 /* NSError+JSONSerializationErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+JSONSerializationErrorType.swift"; sourceTree = "<group>"; };
-		179406FE1B1BD6E2006DD4A8 /* ServiceTask+PayloadRespondable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceTask+PayloadRespondable.swift"; sourceTree = "<group>"; };
+		179406FE1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceTask+Payload.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				179103AF1B19707300FBE015 /* THGWebService.framework in Frameworks */,
+				17547AE31C619FB300D4B030 /* ELWebService.framework in Frameworks */,
+				17547AE01C619F6D00D4B030 /* MeeSeeks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +141,8 @@
 		179103B01B19707600FBE015 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				179103AE1B19707300FBE015 /* THGWebService.framework */,
+				17547AE21C619FB300D4B030 /* ELWebService.framework */,
+				17547ADF1C619F6C00D4B030 /* MeeSeeks.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,12 +150,11 @@
 		179406E81B1BC784006DD4A8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				179406E91B1BC784006DD4A8 /* GameResult.swift */,
+				179406E91B1BC784006DD4A8 /* Game.swift */,
 				179406EA1B1BC784006DD4A8 /* Image.swift */,
-				179406EB1B1BC784006DD4A8 /* ModelSerializer.swift */,
 				179406EC1B1BC784006DD4A8 /* Platform.swift */,
 				179406ED1B1BC784006DD4A8 /* ResourceType.swift */,
-				179406EE1B1BC784006DD4A8 /* Payload.swift */,
+				17533F5C1B3527610047BDCA /* Payload.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,9 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				179406F01B1BC784006DD4A8 /* GiantBombClient.swift */,
-				179406F11B1BC784006DD4A8 /* JSON.swift */,
-				179406FC1B1BD393006DD4A8 /* NSError+JSONSerializationErrorType.swift */,
-				179406FE1B1BD6E2006DD4A8 /* ServiceTask+PayloadRespondable.swift */,
+				179406FE1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift */,
 			);
 			path = Swallow;
 			sourceTree = "<group>";
@@ -197,7 +190,7 @@
 				1791038C1B196F8000FBE015 /* Frameworks */,
 				1791038D1B196F8000FBE015 /* Headers */,
 				1791038E1B196F8000FBE015 /* Resources */,
-				179407001B1BE8B8006DD4A8 /* Copy Frameworks */,
+				179407001B1BE8B8006DD4A8 /* Copy Frameworks (1 item) */,
 			);
 			buildRules = (
 			);
@@ -232,7 +225,8 @@
 		179103871B196F8000FBE015 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Angelo Di Paolo";
 				TargetAttributes = {
 					1791038F1B196F8000FBE015 = {
@@ -285,14 +279,11 @@
 			files = (
 				179406F91B1BC784006DD4A8 /* GiantBombClient.swift in Sources */,
 				179406F71B1BC784006DD4A8 /* ResourceType.swift in Sources */,
-				179406F51B1BC784006DD4A8 /* ModelSerializer.swift in Sources */,
-				179406F31B1BC784006DD4A8 /* GameResult.swift in Sources */,
+				17533F5D1B3527610047BDCA /* Payload.swift in Sources */,
+				179406F31B1BC784006DD4A8 /* Game.swift in Sources */,
 				179406F61B1BC784006DD4A8 /* Platform.swift in Sources */,
-				179406F81B1BC784006DD4A8 /* Payload.swift in Sources */,
-				179406FD1B1BD393006DD4A8 /* NSError+JSONSerializationErrorType.swift in Sources */,
 				179406F41B1BC784006DD4A8 /* Image.swift in Sources */,
-				179406FF1B1BD6E2006DD4A8 /* ServiceTask+PayloadRespondable.swift in Sources */,
-				179406FA1B1BC784006DD4A8 /* JSON.swift in Sources */,
+				179406FF1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +328,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -352,7 +344,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -394,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -419,6 +411,7 @@
 				INFOPLIST_FILE = Bobomb/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.angelodipaolo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -440,6 +433,7 @@
 				INFOPLIST_FILE = Bobomb/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.angelodipaolo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -458,6 +452,7 @@
 				);
 				INFOPLIST_FILE = BobombTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.angelodipaolo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -471,6 +466,7 @@
 				);
 				INFOPLIST_FILE = BobombTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.angelodipaolo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

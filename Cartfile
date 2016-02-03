@@ -1,1 +1,2 @@
-github "TheHolyGrail/Swallow" ~> 0.0.2
+github "Electrode-iOS/ELWebService" "master"
+github "angelodipaolo/MeeSeeks" ~> 1.0.0

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MeeSeeks
 
 public struct Platform: BobombResource {
     public var resourceType = ResourceType.Platform
@@ -19,20 +20,23 @@ public struct Platform: BobombResource {
 
 // MARK: - JSON Serialization
 
-extension Platform: JSONSerializable {
+extension Platform: JSONDecodable {
+    public static func decode(json: AnyObject) -> Platform? {
+        return Platform(json: json)
+    }
     
-    public init?(dictionary: NSDictionary) {
-        if let name                 = dictionary["name"] as? String,
-            let siteDetailURLString = dictionary["site_detail_url"] as? String,
-            let apiDetailURLString  = dictionary["api_detail_url"] as? String,
-            let abbreviation        = dictionary["abbreviation"] as? String,
-            let id                  = dictionary["id"] as? String {
-                
-                self.name = name
-                self.abbreviation = abbreviation
-                self.id = id
-                self.siteDetailURLString = siteDetailURLString
-                self.apiDetailURLString = apiDetailURLString
+    public init?(json: AnyObject) {
+        if let name                 = json["name"] as? String,
+            let siteDetailURLString = json["site_detail_url"] as? String,
+            let apiDetailURLString  = json["api_detail_url"] as? String,
+            let abbreviation        = json["abbreviation"] as? String,
+            let id                  = json["id"] as? String
+        {
+            self.name = name
+            self.abbreviation = abbreviation
+            self.id = id
+            self.siteDetailURLString = siteDetailURLString
+            self.apiDetailURLString = apiDetailURLString
         }
         
         return nil
