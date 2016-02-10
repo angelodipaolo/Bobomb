@@ -15,7 +15,7 @@ Bobomb requires Swift 2.2 and Xcode 7.2. Bobomb depends on the [ELWebService](ht
 Install with [Carthage](https://github.com/Carthage/Carthage) by adding the framework to your project's [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile).
 
 ```
-github "angelodipaolo/Bobomb" ~> v1.0.0
+github "angelodipaolo/Bobomb" ~> v1.0.1
 ```
 
 ## Usage
