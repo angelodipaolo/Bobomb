@@ -11,24 +11,17 @@ import MeeSeeks
 
 extension ServiceTask {
     public func payloadAsGameResults(handler: (Payload<Game>) -> Void) -> Self {
-        return
-            responseJSON { json in
-                if let payload = JSONDecoder<Payload<Game>>.decode(json) {
-                    return self.handlePayload(payload, handler: handler)
-                    
-                } else {
-                    return .Failure(ResponseError.FailedToDecodeJSON)
-                }
-                
+        return responseJSON { json in
+            if let payload = JSONDecoder<Payload<Game>>.decode(json) {
+                handler(payload)
+                return .Empty
+            } else {
+                return .Failure(ResponseError.FailedToDecodeJSON)
             }
-            .updateUI { value in
-                if let value = value as? Payload<Game> {
-                    handler(value)
-                }
-            }
+        }
     }
     
-    public func handlePayload<T>(payload: Payload<T>, handler: (Payload<T>) -> Void) -> ServiceTaskResult {
+    public func resultFromPayload<T>(payload: Payload<T>) -> ServiceTaskResult {
         if payload.error == "OK" {
             return .Value(Payload<T>)
         } else {

@@ -44,8 +44,11 @@ extension GiantBombClient {
             .GET("/api/search")
             .setParameters(parameters)
             .payloadAsGameResults { payload in
-                completion(payload)
+                dispatch_async(dispatch_get_main_queue()) {
+                    completion(payload)
+                }
             }
+            .resume()
     }
     
     public func searchGamesWithQuery(query: String, completion: (Payload<Game>) -> Void) -> ServiceTask {
@@ -57,8 +60,12 @@ extension GiantBombClient {
             .GET("/api/search")
             .setParameters(parameters)
             .payloadAsGameResults { payload in
-                completion(payload)
+                dispatch_async(dispatch_get_main_queue()) {
+                    completion(payload)
+                }
+                
             }
+            .resume()
         
     }
     
@@ -66,11 +73,13 @@ extension GiantBombClient {
         return webService
             .GET("/api/game/\(gameID)")
             .setParameters(defaultParameters)
+            .resume()
     }
     
     public func fetchPlatform(platformID: Int) -> ServiceTask {
         return webService
             .GET("/api/platform/\(platformID)")
             .setParameters(defaultParameters)
+            .resume()
     }
 }
