@@ -11,7 +11,7 @@ import MeeSeeks
 
 extension ServiceTask {
     public func payloadAsGameResults(handler: (Payload<Game>) -> Void) -> Self {
-        return responseJSON { json in
+        return responseJSON { json, response in
             if let payload = JSONDecoder<Payload<Game>>.decode(json) {
                 handler(payload)
                 return .Empty
