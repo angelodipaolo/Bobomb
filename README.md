@@ -6,7 +6,7 @@ GiantBomb API client for Swift.
 
 ## Requirements
 
-Bobomb requires Swift 2.2 and Xcode 7.2. Bobomb depends on the [ELWebService](https://github.com/Electrode-iOS/ELWebService) and [MeeSeeks](https://github.com/angelodipaolo/MeeSeeks) frameworks.
+Bobomb requires Swift 2.2 and Xcode 7.3. Bobomb depends on the [ELWebService](https://github.com/Electrode-iOS/ELWebService) and [MeeSeeks](https://github.com/angelodipaolo/MeeSeeks) frameworks.
 
 ## Installation
 

@@ -26,19 +26,18 @@ extension Platform: JSONDecodable {
     }
     
     public init?(json: AnyObject) {
-        if let name                 = json["name"] as? String,
+        guard
+            let name                = json["name"] as? String,
             let siteDetailURLString = json["site_detail_url"] as? String,
             let apiDetailURLString  = json["api_detail_url"] as? String,
             let abbreviation        = json["abbreviation"] as? String,
             let id                  = json["id"] as? String
-        {
-            self.name = name
-            self.abbreviation = abbreviation
-            self.id = id
-            self.siteDetailURLString = siteDetailURLString
-            self.apiDetailURLString = apiDetailURLString
-        }
+         else { return nil }
         
-        return nil
+        self.name = name
+        self.abbreviation = abbreviation
+        self.id = id
+        self.siteDetailURLString = siteDetailURLString
+        self.apiDetailURLString = apiDetailURLString
     }
 }

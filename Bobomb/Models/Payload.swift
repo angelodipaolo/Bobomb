@@ -26,7 +26,8 @@ extension Payload: JSONDecodable {
     }
     
     public init?(json: AnyObject) {
-        if let error                 = json["error"] as? String,
+        guard
+            let error                = json["error"] as? String,
             let version              = json["version"] as? String,
             let limit                = json["limit"] as? Int,
             let offset               = json["offset"] as? Int,
@@ -35,19 +36,15 @@ extension Payload: JSONDecodable {
             let numberOfTotalResults = json["number_of_total_results"] as? Int,
             let resultArray = json["results"] as? [AnyObject],
             let results = JSONDecoder<T>.decodeArray(resultArray)
-        {
-            
-            self.version = version
-            self.error = error
-            self.limit = limit
-            self.statusCode = statusCode
-            self.offset = offset
-            self.numberOfPageResults = numberOfPageResults
-            self.numberOfTotalResults = numberOfTotalResults
-            self.results = results
-        } else {
-            return nil
-        }
+        else { return nil }
+        
+        self.version = version
+        self.error = error
+        self.limit = limit
+        self.statusCode = statusCode
+        self.offset = offset
+        self.numberOfPageResults = numberOfPageResults
+        self.numberOfTotalResults = numberOfTotalResults
+        self.results = results
     }
-    
 }
