@@ -2,7 +2,9 @@
 
 ![logo](https://github.com/angelodipaolo/Bobomb/blob/master/logo.jpg)
 
-GiantBomb API client for Swift.
+Bobomb is a Swift framework that makes it easy for iOS apps to communicate with the [GiantBomb API](http://www.giantbomb.com/api/).
+
+**NOTE: This is a work in progress**. Many of GiantBomb API endpoints are not yet supported.
 
 ## Requirements
 
