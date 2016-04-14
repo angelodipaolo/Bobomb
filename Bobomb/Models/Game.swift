@@ -30,9 +30,8 @@ extension Game: JSONDecodable {
     }
 
     public init?(json: AnyObject) {
-        self.aliases = json["aliases"] as? String
-        
-        if let name                 = json["name"] as? String,
+        guard
+            let name                = json["name"] as? String,
             let description         = json["description"] as? String,
             let id                  = json["id"] as? Int,
             let siteDetailURLString = json["site_detail_url"] as? String,
@@ -40,16 +39,15 @@ extension Game: JSONDecodable {
             let apiDetailURLString  = json["api_detail_url"] as? String,
             let platformJSON        = json["platforms"] as? [NSDictionary],
             let platforms           = JSONDecoder<Platform>.decodeArray(platformJSON)
-        {
-            self.name = name
-            self.description = description
-            self.id = id
-            self.siteDetailURLString = siteDetailURLString
-            self.deck = deck
-            self.apiDetailURLString = apiDetailURLString
-            self.platforms = platforms
-        } else {
-            return nil
-        }
+        else { return nil }
+    
+        self.aliases = json["aliases"] as? String
+        self.name = name
+        self.description = description
+        self.id = id
+        self.siteDetailURLString = siteDetailURLString
+        self.deck = deck
+        self.apiDetailURLString = apiDetailURLString
+        self.platforms = platforms
     }
 }
