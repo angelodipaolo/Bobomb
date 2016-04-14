@@ -9,8 +9,7 @@
 import Foundation
 import MeeSeeks
 
-public struct Game: BobombResource {
-    public let resourceType = ResourceType.Game
+public struct Game {
     public let id: Int
     public let name: String
     public let description: String

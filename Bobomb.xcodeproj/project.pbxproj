@@ -16,7 +16,6 @@
 		179406F31B1BC784006DD4A8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406E91B1BC784006DD4A8 /* Game.swift */; };
 		179406F41B1BC784006DD4A8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406EA1B1BC784006DD4A8 /* Image.swift */; };
 		179406F61B1BC784006DD4A8 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406EC1B1BC784006DD4A8 /* Platform.swift */; };
-		179406F71B1BC784006DD4A8 /* ResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406ED1B1BC784006DD4A8 /* ResourceType.swift */; };
 		179406F91B1BC784006DD4A8 /* GiantBombClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406F01B1BC784006DD4A8 /* GiantBombClient.swift */; };
 		179406FF1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406FE1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift */; };
 		17F0ADD51C6C02C800593751 /* Accessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0ADD41C6C02C800593751 /* Accessory.swift */; };
@@ -58,7 +57,6 @@
 		179406E91B1BC784006DD4A8 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		179406EA1B1BC784006DD4A8 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		179406EC1B1BC784006DD4A8 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
-		179406ED1B1BC784006DD4A8 /* ResourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceType.swift; sourceTree = "<group>"; };
 		179406F01B1BC784006DD4A8 /* GiantBombClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiantBombClient.swift; sourceTree = "<group>"; };
 		179406FE1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceTask+Payload.swift"; sourceTree = "<group>"; };
 		17F0ADD41C6C02C800593751 /* Accessory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accessory.swift; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 				179406E91B1BC784006DD4A8 /* Game.swift */,
 				179406EA1B1BC784006DD4A8 /* Image.swift */,
 				179406EC1B1BC784006DD4A8 /* Platform.swift */,
-				179406ED1B1BC784006DD4A8 /* ResourceType.swift */,
 				17533F5C1B3527610047BDCA /* Payload.swift */,
 				17F0ADD41C6C02C800593751 /* Accessory.swift */,
 			);
@@ -281,7 +278,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				179406F91B1BC784006DD4A8 /* GiantBombClient.swift in Sources */,
-				179406F71B1BC784006DD4A8 /* ResourceType.swift in Sources */,
 				17533F5D1B3527610047BDCA /* Payload.swift in Sources */,
 				179406F31B1BC784006DD4A8 /* Game.swift in Sources */,
 				179406F61B1BC784006DD4A8 /* Platform.swift in Sources */,

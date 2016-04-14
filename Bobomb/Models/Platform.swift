@@ -9,8 +9,7 @@
 import Foundation
 import MeeSeeks
 
-public struct Platform: BobombResource {
-    public var resourceType = ResourceType.Platform
+public struct Platform {
     public let id: String
     public let name: String
     public let abbreviation: String
