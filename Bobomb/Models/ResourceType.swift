@@ -15,4 +15,5 @@ public protocol BobombResource {
 public enum ResourceType: String {
     case Game = "game"
     case Platform = "platform"
+    case Accessory = "accessory"
 }
