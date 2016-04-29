@@ -24,7 +24,7 @@ extension GiantBombAPI {
 }
 
 public final class GiantBombClient: GiantBombAPI {
-    public static let baseURL = "http://www.giantbomb.com/"
+    public static let baseURL = "https://www.giantbomb.com/"
     public let apiKey: String
     private let webService = WebService(baseURLString: baseURL)
     
