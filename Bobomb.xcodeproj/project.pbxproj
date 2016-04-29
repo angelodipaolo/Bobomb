@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		17533F5D1B3527610047BDCA /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17533F5C1B3527610047BDCA /* Payload.swift */; };
+		175371D61CD31787009E84F4 /* GameInteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175371D01CD31787009E84F4 /* GameInteractionDelegate.swift */; };
+		175371D71CD31787009E84F4 /* GameModelDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175371D11CD31787009E84F4 /* GameModelDataSourceType.swift */; };
+		175371D81CD31787009E84F4 /* GameTableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175371D21CD31787009E84F4 /* GameTableViewCellType.swift */; };
+		175371D91CD31787009E84F4 /* GameTableViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175371D31CD31787009E84F4 /* GameTableViewCoordinator.swift */; };
+		175371DA1CD31787009E84F4 /* GameTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175371D41CD31787009E84F4 /* GameTableViewDataSource.swift */; };
+		175371DB1CD31787009E84F4 /* GameTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175371D51CD31787009E84F4 /* GameTableViewDelegate.swift */; };
 		17547AE01C619F6D00D4B030 /* MeeSeeks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17547ADF1C619F6C00D4B030 /* MeeSeeks.framework */; };
 		17547AE31C619FB300D4B030 /* ELWebService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17547AE21C619FB300D4B030 /* ELWebService.framework */; };
 		179103961B196F8000FBE015 /* Bobomb.h in Headers */ = {isa = PBXBuildFile; fileRef = 179103951B196F8000FBE015 /* Bobomb.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,6 +52,12 @@
 
 /* Begin PBXFileReference section */
 		17533F5C1B3527610047BDCA /* Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		175371D01CD31787009E84F4 /* GameInteractionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInteractionDelegate.swift; sourceTree = "<group>"; };
+		175371D11CD31787009E84F4 /* GameModelDataSourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModelDataSourceType.swift; sourceTree = "<group>"; };
+		175371D21CD31787009E84F4 /* GameTableViewCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewCellType.swift; sourceTree = "<group>"; };
+		175371D31CD31787009E84F4 /* GameTableViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewCoordinator.swift; sourceTree = "<group>"; };
+		175371D41CD31787009E84F4 /* GameTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewDataSource.swift; sourceTree = "<group>"; };
+		175371D51CD31787009E84F4 /* GameTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewDelegate.swift; sourceTree = "<group>"; };
 		17547ADF1C619F6C00D4B030 /* MeeSeeks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MeeSeeks.framework; path = Carthage/Build/iOS/MeeSeeks.framework; sourceTree = "<group>"; };
 		17547AE21C619FB300D4B030 /* ELWebService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ELWebService.framework; path = Carthage/Build/iOS/ELWebService.framework; sourceTree = "<group>"; };
 		179103901B196F8000FBE015 /* Bobomb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bobomb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +95,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		175371CF1CD31787009E84F4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				175371D01CD31787009E84F4 /* GameInteractionDelegate.swift */,
+				175371D11CD31787009E84F4 /* GameModelDataSourceType.swift */,
+				175371D21CD31787009E84F4 /* GameTableViewCellType.swift */,
+				175371D31CD31787009E84F4 /* GameTableViewCoordinator.swift */,
+				175371D41CD31787009E84F4 /* GameTableViewDataSource.swift */,
+				175371D51CD31787009E84F4 /* GameTableViewDelegate.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		179103861B196F8000FBE015 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +133,7 @@
 				179103951B196F8000FBE015 /* Bobomb.h */,
 				179406E81B1BC784006DD4A8 /* Models */,
 				179406EF1B1BC784006DD4A8 /* Swallow */,
+				175371CF1CD31787009E84F4 /* UI */,
 				179103931B196F8000FBE015 /* Supporting Files */,
 			);
 			path = Bobomb;
@@ -279,9 +305,15 @@
 			files = (
 				179406F91B1BC784006DD4A8 /* GiantBombClient.swift in Sources */,
 				17533F5D1B3527610047BDCA /* Payload.swift in Sources */,
+				175371D71CD31787009E84F4 /* GameModelDataSourceType.swift in Sources */,
 				179406F31B1BC784006DD4A8 /* Game.swift in Sources */,
+				175371DA1CD31787009E84F4 /* GameTableViewDataSource.swift in Sources */,
+				175371D91CD31787009E84F4 /* GameTableViewCoordinator.swift in Sources */,
 				179406F61B1BC784006DD4A8 /* Platform.swift in Sources */,
+				175371D81CD31787009E84F4 /* GameTableViewCellType.swift in Sources */,
 				179406F41B1BC784006DD4A8 /* Image.swift in Sources */,
+				175371D61CD31787009E84F4 /* GameInteractionDelegate.swift in Sources */,
+				175371DB1CD31787009E84F4 /* GameTableViewDelegate.swift in Sources */,
 				17F0ADD51C6C02C800593751 /* Accessory.swift in Sources */,
 				179406FF1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift in Sources */,
 			);
