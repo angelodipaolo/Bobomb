@@ -48,5 +48,9 @@ extension Game: JSONDecodable {
         self.deck = deck
         self.apiDetailURLString = apiDetailURLString
         self.platforms = platforms
+        
+        if let imageJSON = json["image"] as? NSDictionary {
+            self.image = JSONDecoder<Image>.decode(imageJSON)
+        }
     }
 }
