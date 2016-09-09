@@ -3,6 +3,7 @@
 [![Version](https://img.shields.io/badge/version-v1.1.0-blue.svg)](https://github.com/angelodipaolo/Bobomb/releases/latest)
 [![Build Status](https://travis-ci.org/angelodipaolo/Bobomb.svg?branch=master)](https://travis-ci.org/angelodipaolo/Bobomb)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 ![logo](https://github.com/angelodipaolo/Bobomb/blob/master/logo.jpg)
 
 Bobomb is a Swift framework that makes it easy for iOS apps to communicate with the [GiantBomb API](http://www.giantbomb.com/api/).
