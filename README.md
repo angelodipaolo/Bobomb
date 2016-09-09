@@ -1,5 +1,8 @@
 # Bobomb 
 
+[![Version](https://img.shields.io/badge/version-v1.1.0-blue.svg)](https://github.com/angelodipaolo/Bobomb/releases/latest)
+[![Build Status](https://travis-ci.org/angelodipaolo/Bobomb.svg?branch=master)](https://travis-ci.org/angelodipaolo/Bobomb)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![logo](https://github.com/angelodipaolo/Bobomb/blob/master/logo.jpg)
 
 Bobomb is a Swift framework that makes it easy for iOS apps to communicate with the [GiantBomb API](http://www.giantbomb.com/api/).
@@ -8,7 +11,7 @@ Bobomb is a Swift framework that makes it easy for iOS apps to communicate with 
 
 ## Requirements
 
-Bobomb requires Swift 2.2 and Xcode 7.3. Bobomb depends on the [ELWebService](https://github.com/Electrode-iOS/ELWebService) and [MeeSeeks](https://github.com/angelodipaolo/MeeSeeks) frameworks.
+Bobomb requires Swift 2.3 and Xcode 8. Bobomb depends on the [ELWebService](https://github.com/Electrode-iOS/ELWebService) and [MeeSeeks](https://github.com/angelodipaolo/MeeSeeks) frameworks.
 
 ## Installation
 
@@ -17,7 +20,7 @@ Bobomb requires Swift 2.2 and Xcode 7.3. Bobomb depends on the [ELWebService](ht
 Install with [Carthage](https://github.com/Carthage/Carthage) by adding the framework to your project's [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile).
 
 ```
-github "angelodipaolo/Bobomb" ~> v1.0.2
+github "angelodipaolo/Bobomb" ~> v1.1.0
 ```
 
 ## Usage
