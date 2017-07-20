@@ -1,2 +1,2 @@
-github "Electrode-iOS/ELWebService" "swift2.3"
-github "angelodipaolo/MeeSeeks" "swift2.3"
+github "Electrode-iOS/ELWebService" ~> 4.0.0
+github "angelodipaolo/MeeSeeks" ~> 2.0.0

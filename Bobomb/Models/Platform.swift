@@ -20,11 +20,7 @@ public struct Platform {
 // MARK: - JSON Serialization
 
 extension Platform: JSONDecodable {
-    public static func decode(json: AnyObject) -> Platform? {
-        return Platform(json: json)
-    }
-    
-    public init?(json: AnyObject) {
+    public init?(json: [String : Any]) throws {
         guard
             let name                = json["name"] as? String,
             let siteDetailURLString = json["site_detail_url"] as? String,

@@ -21,11 +21,7 @@ public struct Payload<T: JSONDecodable> {
 }
 
 extension Payload: JSONDecodable {
-    public static func decode(json: AnyObject) -> Payload? {
-        return Payload(json: json)
-    }
-    
-    public init?(json: AnyObject) {
+    public init?(json: [String : Any]) throws {
         guard
             let error                = json["error"] as? String,
             let version              = json["version"] as? String,
@@ -34,8 +30,8 @@ extension Payload: JSONDecodable {
             let statusCode           = json["status_code"] as? Int,
             let numberOfPageResults  = json["number_of_page_results"] as? Int,
             let numberOfTotalResults = json["number_of_total_results"] as? Int,
-            let resultArray = json["results"] as? [AnyObject],
-            let results = JSONDecoder<T>.decodeArray(resultArray)
+        let resultArray = json["results"] as? [[String: Any]],
+            let results = try JSONDecoder<T>.decode(jsonArray: resultArray)
         else { return nil }
         
         self.version = version

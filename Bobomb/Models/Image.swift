@@ -10,22 +10,18 @@ import Foundation
 import MeeSeeks
 
 public struct Image {
-    public var iconURL: NSURL?
-    public var mediumURL: NSURL?
+    public var iconURL: URL?
+    public var mediumURL: URL?
 }
 
 extension Image: JSONDecodable {
-    public static func decode(json: AnyObject) -> Image? {
-        return Image(json: json)
-    }
-    
-    public init?(json: AnyObject) {
+    public init?(json: [String : Any]) throws {
         if let iconURLString = json["icon_url"] as? String {
-            self.iconURL = NSURL(string: iconURLString)
+            self.iconURL = URL(string: iconURLString)
         }
         
         if let mediumURLString = json["medium_url"] as? String {
-            self.mediumURL = NSURL(string: mediumURLString)
+            self.mediumURL = URL(string: mediumURLString)
         }
     }
 }

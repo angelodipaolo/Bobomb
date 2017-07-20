@@ -24,11 +24,7 @@ public struct Accessory {
 // MARK: - JSON Serialization
 
 extension Accessory: JSONDecodable {
-    public static func decode(json: AnyObject) -> Accessory? {
-        return Accessory(json: json)
-    }
-    
-    public init?(json: AnyObject) {
+    public init?(json: [String: Any]) throws {
         guard
             let name                = json["name"] as? String,
             let description         = json["description"] as? String,
@@ -36,8 +32,8 @@ extension Accessory: JSONDecodable {
             let siteDetailURLString = json["site_detail_url"] as? String,
             let deck                = json["deck"] as? String,
             let apiDetailURLString  = json["api_detail_url"] as? String,
-            let platformJSON        = json["platforms"] as? [NSDictionary],
-            let platforms           = JSONDecoder<Platform>.decodeArray(platformJSON)
+            let platformJSON        = json["platforms"] as? [[String: Any]],
+            let platforms           = try JSONDecoder<Platform>.decode(jsonArray: platformJSON)
          else { return nil }
         
         self.aliases = json["aliases"] as? String

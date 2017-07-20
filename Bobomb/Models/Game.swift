@@ -24,11 +24,7 @@ public struct Game {
 // MARK: - JSON Serialization
 
 extension Game: JSONDecodable {
-    public static func decode(json: AnyObject) -> Game? {
-        return Game(json: json)
-    }
-
-    public init?(json: AnyObject) {
+    public init?(json: [String: Any]) throws {
         guard
             let name                = json["name"] as? String,
             let description         = json["description"] as? String,
@@ -36,8 +32,8 @@ extension Game: JSONDecodable {
             let siteDetailURLString = json["site_detail_url"] as? String,
             let deck                = json["deck"] as? String,
             let apiDetailURLString  = json["api_detail_url"] as? String,
-            let platformJSON        = json["platforms"] as? [NSDictionary],
-            let platforms           = JSONDecoder<Platform>.decodeArray(platformJSON)
+            let platformJSON        = json["platforms"] as? [[String: Any]],
+            let platforms           = try JSONDecoder<Platform>.decode(jsonArray: platformJSON)
         else { return nil }
     
         self.aliases = json["aliases"] as? String
@@ -49,8 +45,8 @@ extension Game: JSONDecodable {
         self.apiDetailURLString = apiDetailURLString
         self.platforms = platforms
         
-        if let imageJSON = json["image"] as? NSDictionary {
-            self.image = JSONDecoder<Image>.decode(imageJSON)
+        if let imageJSON = json["image"] as? [String: Any] {
+            self.image = try JSONDecoder<Image>.decode(json: imageJSON)
         }
     }
 }

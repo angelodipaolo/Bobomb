@@ -13,20 +13,20 @@ public protocol GiantBombAPI {
     
     init(apiKey: String)
     
-    func searchWithQuery(query: String, completion: (Payload<Game>) -> Void) -> ServiceTask
-    func searchGamesWithQuery(query: String, completion: (Payload<Game>) -> Void) -> ServiceTask
+    func search(query: String, completion: @escaping (Payload<Game>) -> Void) -> ServiceTask
+    func searchGames(query: String, completion: @escaping (Payload<Game>) -> Void) -> ServiceTask
 }
 
 extension GiantBombAPI {
-    var defaultParameters: [String: AnyObject] {
+    var defaultParameters: [String: Any] {
         return ["api_key" : apiKey, "format": "json"]
     }
 }
 
 public final class GiantBombClient: GiantBombAPI {
-    public static let baseURL = "http://www.giantbomb.com/"
+    public static let baseURL = "https://www.giantbomb.com/"
     public let apiKey: String
-    private let webService = WebService(baseURLString: baseURL)
+    fileprivate let webService = WebService(baseURLString: baseURL)
     
     public init(apiKey: String) {
         self.apiKey = apiKey
@@ -36,7 +36,7 @@ public final class GiantBombClient: GiantBombAPI {
 // MARK: - Resources
 
 extension GiantBombClient {
-    public func searchWithQuery(query: String, completion: (Payload<Game>) -> Void) -> ServiceTask {
+    public func search(query: String, completion: @escaping (Payload<Game>) -> Void) -> ServiceTask {
         var parameters = defaultParameters
         parameters["query"] = query
         
@@ -44,14 +44,15 @@ extension GiantBombClient {
             .GET("/api/search")
             .setParameters(parameters)
             .payloadAsGameResults { payload in
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     completion(payload)
+
                 }
             }
             .resume()
     }
     
-    public func searchGamesWithQuery(query: String, completion: (Payload<Game>) -> Void) -> ServiceTask {
+    public func searchGames(query: String, completion: @escaping (Payload<Game>) -> Void) -> ServiceTask {
         var parameters = defaultParameters
         parameters["resources"] = "game"
         parameters["query"] = query
@@ -60,7 +61,7 @@ extension GiantBombClient {
             .GET("/api/search")
             .setParameters(parameters)
             .payloadAsGameResults { payload in
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     completion(payload)
                 }
                 
@@ -69,14 +70,14 @@ extension GiantBombClient {
         
     }
     
-    public func fetchGame(gameID: Int) -> ServiceTask {
+    public func fetch(gameID: Int) -> ServiceTask {
         return webService
             .GET("/api/game/\(gameID)")
             .setParameters(defaultParameters)
             .resume()
     }
     
-    public func fetchPlatform(platformID: Int) -> ServiceTask {
+    public func fetch(platformID: Int) -> ServiceTask {
         return webService
             .GET("/api/platform/\(platformID)")
             .setParameters(defaultParameters)

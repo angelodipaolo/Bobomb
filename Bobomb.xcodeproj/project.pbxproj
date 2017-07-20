@@ -16,9 +16,9 @@
 		179406F31B1BC784006DD4A8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406E91B1BC784006DD4A8 /* Game.swift */; };
 		179406F41B1BC784006DD4A8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406EA1B1BC784006DD4A8 /* Image.swift */; };
 		179406F61B1BC784006DD4A8 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406EC1B1BC784006DD4A8 /* Platform.swift */; };
-		179406F91B1BC784006DD4A8 /* GiantBombClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406F01B1BC784006DD4A8 /* GiantBombClient.swift */; };
-		179406FF1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179406FE1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift */; };
 		17F0ADD51C6C02C800593751 /* Accessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0ADD41C6C02C800593751 /* Accessory.swift */; };
+		17F362011DE28016008F030F /* GiantBombClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F361FF1DE28016008F030F /* GiantBombClient.swift */; };
+		17F362021DE28016008F030F /* ServiceTask+Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F362001DE28016008F030F /* ServiceTask+Payload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,9 +57,9 @@
 		179406E91B1BC784006DD4A8 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		179406EA1B1BC784006DD4A8 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		179406EC1B1BC784006DD4A8 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
-		179406F01B1BC784006DD4A8 /* GiantBombClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiantBombClient.swift; sourceTree = "<group>"; };
-		179406FE1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceTask+Payload.swift"; sourceTree = "<group>"; };
 		17F0ADD41C6C02C800593751 /* Accessory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accessory.swift; sourceTree = "<group>"; };
+		17F361FF1DE28016008F030F /* GiantBombClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiantBombClient.swift; sourceTree = "<group>"; };
+		17F362001DE28016008F030F /* ServiceTask+Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceTask+Payload.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				179103951B196F8000FBE015 /* Bobomb.h */,
+				17F361FE1DE28016008F030F /* HTTP */,
 				179406E81B1BC784006DD4A8 /* Models */,
-				179406EF1B1BC784006DD4A8 /* Swallow */,
 				179103931B196F8000FBE015 /* Supporting Files */,
 			);
 			path = Bobomb;
@@ -159,13 +159,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		179406EF1B1BC784006DD4A8 /* Swallow */ = {
+		17F361FE1DE28016008F030F /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
-				179406F01B1BC784006DD4A8 /* GiantBombClient.swift */,
-				179406FE1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift */,
+				17F361FF1DE28016008F030F /* GiantBombClient.swift */,
+				17F362001DE28016008F030F /* ServiceTask+Payload.swift */,
 			);
-			path = Swallow;
+			path = HTTP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +235,7 @@
 					};
 					1791039A1B196F8000FBE015 = {
 						CreatedOnToolsVersion = 6.3.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -279,13 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				179406F91B1BC784006DD4A8 /* GiantBombClient.swift in Sources */,
 				17533F5D1B3527610047BDCA /* Payload.swift in Sources */,
+				17F362021DE28016008F030F /* ServiceTask+Payload.swift in Sources */,
 				179406F31B1BC784006DD4A8 /* Game.swift in Sources */,
+				17F362011DE28016008F030F /* GiantBombClient.swift in Sources */,
 				179406F61B1BC784006DD4A8 /* Platform.swift in Sources */,
 				179406F41B1BC784006DD4A8 /* Image.swift in Sources */,
 				17F0ADD51C6C02C800593751 /* Accessory.swift in Sources */,
-				179406FF1B1BD6E2006DD4A8 /* ServiceTask+Payload.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +353,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -396,6 +397,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -423,7 +425,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -446,7 +448,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.angelodipaolo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};
@@ -465,7 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.angelodipaolo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -480,7 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.angelodipaolo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
