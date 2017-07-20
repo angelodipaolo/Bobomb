@@ -12,7 +12,7 @@ Bobomb is a Swift framework that makes it easy for iOS apps to communicate with 
 
 ## Requirements
 
-Bobomb requires Swift 2.3 and Xcode 8. Bobomb depends on the [ELWebService](https://github.com/Electrode-iOS/ELWebService) and [MeeSeeks](https://github.com/angelodipaolo/MeeSeeks) frameworks.
+Bobomb requires Swift 3.1 and Xcode 8.3.
 
 ## Installation
 
@@ -21,7 +21,7 @@ Bobomb requires Swift 2.3 and Xcode 8. Bobomb depends on the [ELWebService](http
 Install with [Carthage](https://github.com/Carthage/Carthage) by adding the framework to your project's [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile).
 
 ```
-github "angelodipaolo/Bobomb" ~> v1.1.0
+github "angelodipaolo/Bobomb" ~> v2.0.0
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ import Bobomb
 
 let client = GiantBombClient(apiKey: "12345")
         
-client.searchGamesWithQuery("metroid") { (payload: Payload<Game>) in
+client.searchGames(query: "metroid") { (payload: Payload<Game>) in
     for game in payload.results {
         print(game.name)
     }
