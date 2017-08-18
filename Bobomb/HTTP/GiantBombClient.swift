@@ -13,8 +13,8 @@ public protocol GiantBombAPI {
     
     init(apiKey: String)
     
-    func search(query: String, completion: @escaping (Payload<Game>) -> Void) -> ServiceTask
-    func searchGames(query: String, completion: @escaping (Payload<Game>) -> Void) -> ServiceTask
+    func search(query: String, completion: @escaping (Result<Game>) -> Void) -> ServiceTask
+    func searchGames(query: String, completion: @escaping (Result<Game>) -> Void) -> ServiceTask
 }
 
 extension GiantBombAPI {
@@ -36,23 +36,18 @@ public final class GiantBombClient: GiantBombAPI {
 // MARK: - Resources
 
 extension GiantBombClient {
-    public func search(query: String, completion: @escaping (Payload<Game>) -> Void) -> ServiceTask {
+    @discardableResult public func search(query: String, completion: @escaping (Result<Game>) -> Void) -> ServiceTask {
         var parameters = defaultParameters
         parameters["query"] = query
         
         return webService
             .GET("/api/search")
             .setParameters(parameters)
-            .payloadAsGameResults { payload in
-                DispatchQueue.main.async {
-                    completion(payload)
-
-                }
-            }
+            .payload(handler: completion)
             .resume()
     }
     
-    public func searchGames(query: String, completion: @escaping (Payload<Game>) -> Void) -> ServiceTask {
+    @discardableResult public func searchGames(query: String, completion: @escaping (Result<Game>) -> Void) -> ServiceTask {
         var parameters = defaultParameters
         parameters["resources"] = "game"
         parameters["query"] = query
@@ -60,24 +55,19 @@ extension GiantBombClient {
         return webService
             .GET("/api/search")
             .setParameters(parameters)
-            .payloadAsGameResults { payload in
-                DispatchQueue.main.async {
-                    completion(payload)
-                }
-                
-            }
+            .payload(handler: completion)
             .resume()
         
     }
     
-    public func fetch(gameID: Int) -> ServiceTask {
+    @discardableResult public func fetch(gameID: Int) -> ServiceTask {
         return webService
             .GET("/api/game/\(gameID)")
             .setParameters(defaultParameters)
             .resume()
     }
     
-    public func fetch(platformID: Int) -> ServiceTask {
+    @discardableResult public func fetch(platformID: Int) -> ServiceTask {
         return webService
             .GET("/api/platform/\(platformID)")
             .setParameters(defaultParameters)
