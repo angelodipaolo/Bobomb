@@ -33,7 +33,7 @@ extension Accessory: JSONDecodable {
             let deck                = json["deck"] as? String,
             let apiDetailURLString  = json["api_detail_url"] as? String,
             let platformJSON        = json["platforms"] as? [[String: Any]],
-            let platforms           = try JSONDecoder<Platform>.decode(jsonArray: platformJSON)
+            let platforms           = try MeeSeeks.JSONDecoder<Platform>.decode(jsonArray: platformJSON)
          else { return nil }
         
         self.aliases = json["aliases"] as? String

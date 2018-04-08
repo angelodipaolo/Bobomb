@@ -31,7 +31,7 @@ extension Payload: JSONDecodable {
             let numberOfPageResults  = json["number_of_page_results"] as? Int,
             let numberOfTotalResults = json["number_of_total_results"] as? Int,
         let resultArray = json["results"] as? [[String: Any]],
-            let results = try JSONDecoder<T>.decode(jsonArray: resultArray)
+            let results = try MeeSeeks.JSONDecoder<T>.decode(jsonArray: resultArray)
         else { return nil }
         
         self.version = version

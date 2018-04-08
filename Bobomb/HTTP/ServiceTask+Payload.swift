@@ -29,7 +29,7 @@ extension ServiceTask {
                 handler(Result(error: ResponseError.FailedToDecodeJSON))
                 return .empty
             }
-            guard let payload = try JSONDecoder<Payload<T>>.decode(json: payloadJSON) else {
+            guard let payload = try MeeSeeks.JSONDecoder<Payload<T>>.decode(json: payloadJSON) else {
                 handler(Result(error: ResponseError.FailedToDecodeJSON))
                 return .empty
             }
