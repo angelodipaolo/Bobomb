@@ -1,4 +1,4 @@
 language: objective-c
-osx_image: xcode8
+osx_image: xcode9.3
 script:
    - xctool -project Bobomb.xcodeproj -scheme Bobomb -sdk iphonesimulator build test
