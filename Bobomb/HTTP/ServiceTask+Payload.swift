@@ -7,46 +7,42 @@
 //
 
 import ELWebService
-import MeeSeeks
 
-public enum Result<T: JSONDecodable> {
-    case success(Payload<T>)
+public enum Result<T: Codable> {
+    case success(T)
     case failure(Error)
     
     init(error: Error) {
         self = .failure(error)
     }
     
-    init(_ value: Payload<T>) {
+    init(_ value: T) {
         self = .success(value)
     }
 }
 
 extension ServiceTask {
     public func payload<T>(handler: @escaping (Result<T>) -> Void) -> Self {
-        return responseJSON { json, response in
-            guard let payloadJSON = json as? [String: Any] else {
-                handler(Result(error: ResponseError.FailedToDecodeJSON))
-                return .empty
-            }
-            guard let payload = try MeeSeeks.JSONDecoder<Payload<T>>.decode(json: payloadJSON) else {
-                handler(Result(error: ResponseError.FailedToDecodeJSON))
+        return response { data, response in
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    handler(Result(error: ResponseError.FailedToDecodeJSON))
+                }
                 return .empty
             }
             
+            let payload = try JSONDecoder().decode(T.self, from: data)
+
             DispatchQueue.main.async {
                 handler(Result(payload))
             }
             
             return .empty
         }
-    }
-    
-    public func resultFromPayload<T>(payload: Payload<T>) -> ServiceTaskResult {
-        if payload.error == "OK" {
-            return .value(Payload<T>.self)
-        } else {
-            return .failure(ResponseError.ResourceFailure(message: payload.error))
+        .responseError { error in
+            DispatchQueue.main.async {
+                handler(Result(error: error))
+            }
         }
     }
 }

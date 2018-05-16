@@ -13,8 +13,8 @@ public protocol GiantBombAPI {
     
     init(apiKey: String)
     
-    func search(query: String, completion: @escaping (Result<Game>) -> Void) -> ServiceTask
-    func searchGames(query: String, completion: @escaping (Result<Game>) -> Void) -> ServiceTask
+    func search(query: String, completion: @escaping (Result<Payload<Game>>) -> Void) -> ServiceTask
+    func searchGames(query: String, completion: @escaping (Result<Payload<Game>>) -> Void) -> ServiceTask
 }
 
 extension GiantBombAPI {
@@ -36,7 +36,7 @@ public final class GiantBombClient: GiantBombAPI {
 // MARK: - Resources
 
 extension GiantBombClient {
-    @discardableResult public func search(query: String, completion: @escaping (Result<Game>) -> Void) -> ServiceTask {
+    @discardableResult public func search(query: String, completion: @escaping (Result<Payload<Game>>) -> Void) -> ServiceTask {
         var parameters = defaultParameters
         parameters["query"] = query
         
@@ -47,7 +47,7 @@ extension GiantBombClient {
             .resume()
     }
     
-    @discardableResult public func searchGames(query: String, completion: @escaping (Result<Game>) -> Void) -> ServiceTask {
+    @discardableResult public func searchGames(query: String, completion: @escaping (Result<Payload<Game>>) -> Void) -> ServiceTask {
         var parameters = defaultParameters
         parameters["resources"] = "game"
         parameters["query"] = query

@@ -9,7 +9,7 @@
 import Foundation
 import MeeSeeks
 
-public struct Payload<T: JSONDecodable> {
+public struct Payload<T: Codable>: Codable {
     public let version: String
     public let limit: Int
     public let offset: Int
@@ -18,29 +18,15 @@ public struct Payload<T: JSONDecodable> {
     public let statusCode: Int
     public let error: String
     public let results: [T]
-}
-
-extension Payload: JSONDecodable {
-    public init?(json: [String : Any]) throws {
-        guard
-            let error                = json["error"] as? String,
-            let version              = json["version"] as? String,
-            let limit                = json["limit"] as? Int,
-            let offset               = json["offset"] as? Int,
-            let statusCode           = json["status_code"] as? Int,
-            let numberOfPageResults  = json["number_of_page_results"] as? Int,
-            let numberOfTotalResults = json["number_of_total_results"] as? Int,
-        let resultArray = json["results"] as? [[String: Any]],
-            let results = try MeeSeeks.JSONDecoder<T>.decode(jsonArray: resultArray)
-        else { return nil }
-        
-        self.version = version
-        self.error = error
-        self.limit = limit
-        self.statusCode = statusCode
-        self.offset = offset
-        self.numberOfPageResults = numberOfPageResults
-        self.numberOfTotalResults = numberOfTotalResults
-        self.results = results
+    
+    enum CodingKeys: String, CodingKey {
+        case error = "error"
+        case version = "version"
+        case limit = "limit"
+        case offset = "offset"
+        case statusCode = "status_code"
+        case numberOfPageResults = "number_of_page_results"
+        case numberOfTotalResults = "number_of_total_results"
+        case results = "results"
     }
 }
