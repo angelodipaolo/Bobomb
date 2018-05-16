@@ -1,6 +1,5 @@
 # Bobomb 
 
-[![Version](https://img.shields.io/badge/version-v2.0.0-blue.svg)](https://github.com/angelodipaolo/Bobomb/releases/latest)
 [![Build Status](https://travis-ci.org/angelodipaolo/Bobomb.svg?branch=master)](https://travis-ci.org/angelodipaolo/Bobomb)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -12,7 +11,7 @@ Bobomb is a Swift framework that makes it easy for iOS apps to communicate with 
 
 ## Requirements
 
-Bobomb requires Swift 3.1 and Xcode 8.3.
+Bobomb requires Swift 4.1 and Xcode 9.3.
 
 ## Installation
 
@@ -21,7 +20,7 @@ Bobomb requires Swift 3.1 and Xcode 8.3.
 Install with [Carthage](https://github.com/Carthage/Carthage) by adding the framework to your project's [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile).
 
 ```
-github "angelodipaolo/Bobomb" ~> v2.0.0
+github "angelodipaolo/Bobomb"
 ```
 
 ## Usage
@@ -31,13 +30,14 @@ import Bobomb
 
 let client = GiantBombClient(apiKey: "12345")
         
-client.searchGames(query: "metroid") { (payload: Payload<Game>) in
-    for game in payload.results {
-        print(game.name)
+client.searchGames(query: "metroid") { (payload: Result<Game>) in
+    switch result {
+    case .success(let payload):
+        for game in payload.results {
+            print(game.name)
+        }
+    case .failure(let error):
+        print("error = \(error)")
     }
-}
-.updateErrorUI { error in
-    print("error = \(error)")
-    // handle response error
 }
 ```
