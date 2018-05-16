@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import MeeSeeks
 
 public struct Accessory: Codable {
     public let id: Int

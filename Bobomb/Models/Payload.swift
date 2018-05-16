@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import MeeSeeks
 
 public struct Payload<T: Codable>: Codable {
     public let version: String
