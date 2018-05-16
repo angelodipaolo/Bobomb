@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		17533F5D1B3527610047BDCA /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17533F5C1B3527610047BDCA /* Payload.swift */; };
-		17547AE01C619F6D00D4B030 /* MeeSeeks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17547ADF1C619F6C00D4B030 /* MeeSeeks.framework */; };
 		17547AE31C619FB300D4B030 /* ELWebService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17547AE21C619FB300D4B030 /* ELWebService.framework */; };
 		179103961B196F8000FBE015 /* Bobomb.h in Headers */ = {isa = PBXBuildFile; fileRef = 179103951B196F8000FBE015 /* Bobomb.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1791039C1B196F8000FBE015 /* Bobomb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179103901B196F8000FBE015 /* Bobomb.framework */; };
@@ -46,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		17533F5C1B3527610047BDCA /* Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
-		17547ADF1C619F6C00D4B030 /* MeeSeeks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MeeSeeks.framework; path = Carthage/Build/iOS/MeeSeeks.framework; sourceTree = "<group>"; };
 		17547AE21C619FB300D4B030 /* ELWebService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ELWebService.framework; path = Carthage/Build/iOS/ELWebService.framework; sourceTree = "<group>"; };
 		179103901B196F8000FBE015 /* Bobomb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bobomb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		179103941B196F8000FBE015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				17547AE31C619FB300D4B030 /* ELWebService.framework in Frameworks */,
-				17547AE01C619F6D00D4B030 /* MeeSeeks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				17547AE21C619FB300D4B030 /* ELWebService.framework */,
-				17547ADF1C619F6C00D4B030 /* MeeSeeks.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
